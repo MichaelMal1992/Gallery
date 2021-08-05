@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		843EAE1B2691D8800035078B /* PasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE1A2691D8800035078B /* PasswordManager.swift */; };
+		843EAE1D269200920035078B /* TappableImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843EAE1C269200920035078B /* TappableImageView.xib */; };
+		843EAE1F269202ED0035078B /* TappableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE1E269202ED0035078B /* TappableImageView.swift */; };
+		843EAE21269211D80035078B /* UIView+FixInContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE20269211D80035078B /* UIView+FixInContainer.swift */; };
+		843EAE2326925DC30035078B /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE2226925DC30035078B /* Manager.swift */; };
+		843EAE29269324980035078B /* UIViewController+GetImagesArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE28269324980035078B /* UIViewController+GetImagesArray.swift */; };
+		843EAE2B2694A1D80035078B /* GalleryViewController+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE2A2694A1D80035078B /* GalleryViewController+TextField.swift */; };
+		843EAE2D2694A3C90035078B /* SettingsViewController+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE2C2694A3C90035078B /* SettingsViewController+TextField.swift */; };
+		843EAE2F2694C5720035078B /* GalleryViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE2E2694C5720035078B /* GalleryViewController+TableView.swift */; };
+		843EAE362694CBCE0035078B /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE342694CBCE0035078B /* CommentsTableViewCell.swift */; };
+		843EAE372694CBCE0035078B /* CommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843EAE352694CBCE0035078B /* CommentsTableViewCell.xib */; };
+		843EAE3B2694E78A0035078B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE3A2694E78A0035078B /* Image.swift */; };
+		843EAE3D2694EA330035078B /* UIViewController+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE3C2694EA330035078B /* UIViewController+UserDefaults.swift */; };
+		843EAE3F2695A8E70035078B /* UIViewController+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE3E2695A8E70035078B /* UIViewController+Codable.swift */; };
+		843EAE412695BA780035078B /* GalleryViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE402695BA780035078B /* GalleryViewController+UICollectionViewDataSource.swift */; };
+		843EAE462695C0160035078B /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE442695C0160035078B /* ImagesCollectionViewCell.swift */; };
+		843EAE472695C0160035078B /* ImagesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843EAE452695C0160035078B /* ImagesCollectionViewCell.xib */; };
+		843EAE492695C39A0035078B /* UIViewController+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE482695C39A0035078B /* UIViewController+Date.swift */; };
+		843EAE4B269729440035078B /* GalleryViewController+GestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE4A269729440035078B /* GalleryViewController+GestureRecognizer.swift */; };
+		843EAE4D2697373B0035078B /* SettingsViewController+GestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE4C2697373B0035078B /* SettingsViewController+GestureRecognizer.swift */; };
+		849C888926836E2C0029E74F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C888826836E2C0029E74F /* AppDelegate.swift */; };
+		849C888B26836E2C0029E74F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C888A26836E2C0029E74F /* SceneDelegate.swift */; };
+		849C889026836E2C0029E74F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849C888E26836E2C0029E74F /* Main.storyboard */; };
+		849C889226836E2F0029E74F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849C889126836E2F0029E74F /* Assets.xcassets */; };
+		849C889526836E2F0029E74F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849C889326836E2F0029E74F /* LaunchScreen.storyboard */; };
+		849C889D26836EF20029E74F /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C889C26836EF20029E74F /* AuthorizationViewController.swift */; };
+		849C889F268370250029E74F /* UIViewController+NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C889E268370250029E74F /* UIViewController+NewViewController.swift */; };
+		849C88A2268374A70029E74F /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C88A1268374A70029E74F /* UIViewController+Alert.swift */; };
+		849C88A426838E730029E74F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C88A326838E730029E74F /* SettingsViewController.swift */; };
+		849C88A626838E980029E74F /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C88A526838E980029E74F /* GalleryViewController.swift */; };
+		849C88A8268390C60029E74F /* GalleryViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C88A7268390C60029E74F /* GalleryViewController+ImagePicker.swift */; };
+		AD91EE74D977BA64DF870773 /* Pods_StoragePicturesWithPasswordApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC567E146E15E06514BD292F /* Pods_StoragePicturesWithPasswordApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		39E2D224971BBE2C194ABE4A /* Pods-StoragePicturesWithPasswordApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoragePicturesWithPasswordApp.release.xcconfig"; path = "Target Support Files/Pods-StoragePicturesWithPasswordApp/Pods-StoragePicturesWithPasswordApp.release.xcconfig"; sourceTree = "<group>"; };
+		5823BB37AF770B89AE9B7049 /* Pods-StoragePicturesWithPasswordApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoragePicturesWithPasswordApp.debug.xcconfig"; path = "Target Support Files/Pods-StoragePicturesWithPasswordApp/Pods-StoragePicturesWithPasswordApp.debug.xcconfig"; sourceTree = "<group>"; };
+		843EAE1A2691D8800035078B /* PasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordManager.swift; sourceTree = "<group>"; };
+		843EAE1C269200920035078B /* TappableImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TappableImageView.xib; sourceTree = "<group>"; };
+		843EAE1E269202ED0035078B /* TappableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableImageView.swift; sourceTree = "<group>"; };
+		843EAE20269211D80035078B /* UIView+FixInContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FixInContainer.swift"; sourceTree = "<group>"; };
+		843EAE2226925DC30035078B /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		843EAE28269324980035078B /* UIViewController+GetImagesArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+GetImagesArray.swift"; sourceTree = "<group>"; };
+		843EAE2A2694A1D80035078B /* GalleryViewController+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewController+TextField.swift"; sourceTree = "<group>"; };
+		843EAE2C2694A3C90035078B /* SettingsViewController+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewController+TextField.swift"; sourceTree = "<group>"; };
+		843EAE2E2694C5720035078B /* GalleryViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewController+TableView.swift"; sourceTree = "<group>"; };
+		843EAE342694CBCE0035078B /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		843EAE352694CBCE0035078B /* CommentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsTableViewCell.xib; sourceTree = "<group>"; };
+		843EAE3A2694E78A0035078B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		843EAE3C2694EA330035078B /* UIViewController+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UserDefaults.swift"; sourceTree = "<group>"; };
+		843EAE3E2695A8E70035078B /* UIViewController+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Codable.swift"; sourceTree = "<group>"; };
+		843EAE402695BA780035078B /* GalleryViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		843EAE442695C0160035078B /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		843EAE452695C0160035078B /* ImagesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesCollectionViewCell.xib; sourceTree = "<group>"; };
+		843EAE482695C39A0035078B /* UIViewController+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Date.swift"; sourceTree = "<group>"; };
+		843EAE4A269729440035078B /* GalleryViewController+GestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewController+GestureRecognizer.swift"; sourceTree = "<group>"; };
+		843EAE4C2697373B0035078B /* SettingsViewController+GestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewController+GestureRecognizer.swift"; sourceTree = "<group>"; };
+		849C888526836E2C0029E74F /* StoragePicturesWithPasswordApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoragePicturesWithPasswordApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		849C888826836E2C0029E74F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		849C888A26836E2C0029E74F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		849C888F26836E2C0029E74F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		849C889126836E2F0029E74F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		849C889426836E2F0029E74F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		849C889626836E2F0029E74F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		849C889C26836EF20029E74F /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		849C889E268370250029E74F /* UIViewController+NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NewViewController.swift"; sourceTree = "<group>"; };
+		849C88A1268374A70029E74F /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		849C88A326838E730029E74F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		849C88A526838E980029E74F /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		849C88A7268390C60029E74F /* GalleryViewController+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewController+ImagePicker.swift"; sourceTree = "<group>"; };
+		AC567E146E15E06514BD292F /* Pods_StoragePicturesWithPasswordApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoragePicturesWithPasswordApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		849C888226836E2C0029E74F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD91EE74D977BA64DF870773 /* Pods_StoragePicturesWithPasswordApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		849C887C26836E2C0029E74F = {
+			isa = PBXGroup;
+			children = (
+				849C888726836E2C0029E74F /* StoragePicturesWithPasswordApp */,
+				849C888626836E2C0029E74F /* Products */,
+				F4DAB456A49425ADA6ADB16F /* Pods */,
+				9307B8D14BBF3FD5906A3CF8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		849C888626836E2C0029E74F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				849C888526836E2C0029E74F /* StoragePicturesWithPasswordApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		849C888726836E2C0029E74F /* StoragePicturesWithPasswordApp */ = {
+			isa = PBXGroup;
+			children = (
+				849C888826836E2C0029E74F /* AppDelegate.swift */,
+				849C888A26836E2C0029E74F /* SceneDelegate.swift */,
+				849C889C26836EF20029E74F /* AuthorizationViewController.swift */,
+				849C88A526838E980029E74F /* GalleryViewController.swift */,
+				849C88A326838E730029E74F /* SettingsViewController.swift */,
+				843EAE3A2694E78A0035078B /* Image.swift */,
+				843EAE1A2691D8800035078B /* PasswordManager.swift */,
+				843EAE2226925DC30035078B /* Manager.swift */,
+				843EAE1E269202ED0035078B /* TappableImageView.swift */,
+				843EAE342694CBCE0035078B /* CommentsTableViewCell.swift */,
+				843EAE442695C0160035078B /* ImagesCollectionViewCell.swift */,
+				843EAE452695C0160035078B /* ImagesCollectionViewCell.xib */,
+				843EAE352694CBCE0035078B /* CommentsTableViewCell.xib */,
+				843EAE1C269200920035078B /* TappableImageView.xib */,
+				849C88A02683747C0029E74F /* Extension */,
+				849C888E26836E2C0029E74F /* Main.storyboard */,
+				849C889126836E2F0029E74F /* Assets.xcassets */,
+				849C889326836E2F0029E74F /* LaunchScreen.storyboard */,
+				849C889626836E2F0029E74F /* Info.plist */,
+			);
+			path = StoragePicturesWithPasswordApp;
+			sourceTree = "<group>";
+		};
+		849C88A02683747C0029E74F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				849C889E268370250029E74F /* UIViewController+NewViewController.swift */,
+				849C88A1268374A70029E74F /* UIViewController+Alert.swift */,
+				849C88A7268390C60029E74F /* GalleryViewController+ImagePicker.swift */,
+				843EAE20269211D80035078B /* UIView+FixInContainer.swift */,
+				843EAE28269324980035078B /* UIViewController+GetImagesArray.swift */,
+				843EAE2A2694A1D80035078B /* GalleryViewController+TextField.swift */,
+				843EAE2C2694A3C90035078B /* SettingsViewController+TextField.swift */,
+				843EAE2E2694C5720035078B /* GalleryViewController+TableView.swift */,
+				843EAE3E2695A8E70035078B /* UIViewController+Codable.swift */,
+				843EAE3C2694EA330035078B /* UIViewController+UserDefaults.swift */,
+				843EAE402695BA780035078B /* GalleryViewController+UICollectionViewDataSource.swift */,
+				843EAE482695C39A0035078B /* UIViewController+Date.swift */,
+				843EAE4A269729440035078B /* GalleryViewController+GestureRecognizer.swift */,
+				843EAE4C2697373B0035078B /* SettingsViewController+GestureRecognizer.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9307B8D14BBF3FD5906A3CF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC567E146E15E06514BD292F /* Pods_StoragePicturesWithPasswordApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4DAB456A49425ADA6ADB16F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5823BB37AF770B89AE9B7049 /* Pods-StoragePicturesWithPasswordApp.debug.xcconfig */,
+				39E2D224971BBE2C194ABE4A /* Pods-StoragePicturesWithPasswordApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		849C888426836E2C0029E74F /* StoragePicturesWithPasswordApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 849C889926836E2F0029E74F /* Build configuration list for PBXNativeTarget "StoragePicturesWithPasswordApp" */;
+			buildPhases = (
+				0E6A91E3414B8B0611C4F24B /* [CP] Check Pods Manifest.lock */,
+				84079C9326BA951E003161B1 /* Swiftlint */,
+				849C888126836E2C0029E74F /* Sources */,
+				849C888226836E2C0029E74F /* Frameworks */,
+				849C888326836E2C0029E74F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StoragePicturesWithPasswordApp;
+			productName = StoragePicturesWithPasswordApp;
+			productReference = 849C888526836E2C0029E74F /* StoragePicturesWithPasswordApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		849C887D26836E2C0029E74F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					849C888426836E2C0029E74F = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 849C888026836E2C0029E74F /* Build configuration list for PBXProject "StoragePicturesWithPasswordApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 849C887C26836E2C0029E74F;
+			productRefGroup = 849C888626836E2C0029E74F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				849C888426836E2C0029E74F /* StoragePicturesWithPasswordApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		849C888326836E2C0029E74F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843EAE472695C0160035078B /* ImagesCollectionViewCell.xib in Resources */,
+				849C889526836E2F0029E74F /* LaunchScreen.storyboard in Resources */,
+				849C889226836E2F0029E74F /* Assets.xcassets in Resources */,
+				843EAE1D269200920035078B /* TappableImageView.xib in Resources */,
+				849C889026836E2C0029E74F /* Main.storyboard in Resources */,
+				843EAE372694CBCE0035078B /* CommentsTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E6A91E3414B8B0611C4F24B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StoragePicturesWithPasswordApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84079C9326BA951E003161B1 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		849C888126836E2C0029E74F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843EAE3B2694E78A0035078B /* Image.swift in Sources */,
+				849C889D26836EF20029E74F /* AuthorizationViewController.swift in Sources */,
+				843EAE4D2697373B0035078B /* SettingsViewController+GestureRecognizer.swift in Sources */,
+				843EAE462695C0160035078B /* ImagesCollectionViewCell.swift in Sources */,
+				843EAE3D2694EA330035078B /* UIViewController+UserDefaults.swift in Sources */,
+				849C889F268370250029E74F /* UIViewController+NewViewController.swift in Sources */,
+				843EAE1F269202ED0035078B /* TappableImageView.swift in Sources */,
+				843EAE21269211D80035078B /* UIView+FixInContainer.swift in Sources */,
+				843EAE2D2694A3C90035078B /* SettingsViewController+TextField.swift in Sources */,
+				849C88A426838E730029E74F /* SettingsViewController.swift in Sources */,
+				843EAE362694CBCE0035078B /* CommentsTableViewCell.swift in Sources */,
+				843EAE4B269729440035078B /* GalleryViewController+GestureRecognizer.swift in Sources */,
+				843EAE2326925DC30035078B /* Manager.swift in Sources */,
+				849C88A8268390C60029E74F /* GalleryViewController+ImagePicker.swift in Sources */,
+				843EAE29269324980035078B /* UIViewController+GetImagesArray.swift in Sources */,
+				843EAE1B2691D8800035078B /* PasswordManager.swift in Sources */,
+				849C88A2268374A70029E74F /* UIViewController+Alert.swift in Sources */,
+				843EAE492695C39A0035078B /* UIViewController+Date.swift in Sources */,
+				849C88A626838E980029E74F /* GalleryViewController.swift in Sources */,
+				843EAE3F2695A8E70035078B /* UIViewController+Codable.swift in Sources */,
+				849C888926836E2C0029E74F /* AppDelegate.swift in Sources */,
+				843EAE2F2694C5720035078B /* GalleryViewController+TableView.swift in Sources */,
+				849C888B26836E2C0029E74F /* SceneDelegate.swift in Sources */,
+				843EAE412695BA780035078B /* GalleryViewController+UICollectionViewDataSource.swift in Sources */,
+				843EAE2B2694A1D80035078B /* GalleryViewController+TextField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		849C888E26836E2C0029E74F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				849C888F26836E2C0029E74F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		849C889326836E2F0029E74F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				849C889426836E2F0029E74F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		849C889726836E2F0029E74F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		849C889826836E2F0029E74F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		849C889A26836E2F0029E74F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5823BB37AF770B89AE9B7049 /* Pods-StoragePicturesWithPasswordApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42L4BWH76Z;
+				INFOPLIST_FILE = StoragePicturesWithPasswordApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = michael.vasm.StoragePicturesWithPasswordApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		849C889B26836E2F0029E74F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39E2D224971BBE2C194ABE4A /* Pods-StoragePicturesWithPasswordApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 42L4BWH76Z;
+				INFOPLIST_FILE = StoragePicturesWithPasswordApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = michael.vasm.StoragePicturesWithPasswordApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		849C888026836E2C0029E74F /* Build configuration list for PBXProject "StoragePicturesWithPasswordApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				849C889726836E2F0029E74F /* Debug */,
+				849C889826836E2F0029E74F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		849C889926836E2F0029E74F /* Build configuration list for PBXNativeTarget "StoragePicturesWithPasswordApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				849C889A26836E2F0029E74F /* Debug */,
+				849C889B26836E2F0029E74F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 849C887D26836E2C0029E74F /* Project object */;
+}
