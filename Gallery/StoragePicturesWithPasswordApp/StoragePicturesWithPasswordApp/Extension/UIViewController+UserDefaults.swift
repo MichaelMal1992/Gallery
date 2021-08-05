@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIViewController {
-    
+
     func setDataValue(_ data: Data) {
         UserDefaults.standard.setValue(data, forKey: Manager.shared.keyForImage)
     }
