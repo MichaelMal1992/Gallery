@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIViewController {
-    
+
     func getCurrentDate() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short

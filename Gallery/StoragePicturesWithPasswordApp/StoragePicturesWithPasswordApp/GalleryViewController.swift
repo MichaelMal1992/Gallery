@@ -8,7 +8,7 @@
 import UIKit
 
 class GalleryViewController: UIViewController {
-    
+
     @IBOutlet weak var imagesCollectionView: UICollectionView!
     @IBOutlet weak var tappableImageView: TappableImageView!
     @IBOutlet weak var comentsTableView: UITableView!

@@ -21,8 +21,10 @@ extension SettingsViewController: UITextFieldDelegate {
             createAlertCancel(title: "The current password is incorrect")
         }
     case enterNewPasswordTextField:
-        if enterNewPasswordTextField.text != PasswordManager.shared.password, enterNewPasswordTextField.text?.isEmpty == false {
-            for textPassword in enterNewPasswordTextField.text ?? "" {
+        let newPassword = enterNewPasswordTextField.text
+        let password = PasswordManager.shared.password
+        if newPassword != password, newPassword?.isEmpty == false {
+            for textPassword in newPassword ?? "" {
                 if textPassword == " " {
                     createAlertCancel(title: "The new password cannot contain a spaces")
                     return false
@@ -42,9 +44,13 @@ extension SettingsViewController: UITextFieldDelegate {
             }
         }
     case repeatNewPasswordTextField:
-        if repeatNewPasswordTextField.text == enterNewPasswordTextField.text, repeatNewPasswordTextField.text?.isEmpty == false {
-            UserDefaults.standard.setValue(repeatNewPasswordTextField.text ?? "", forKey: PasswordManager.shared.keyToPassword)
-            PasswordManager.shared.password = UserDefaults.standard.value(forKey: PasswordManager.shared.keyToPassword) as? String ?? ""
+        let repeatPassword = repeatNewPasswordTextField.text
+        let newPassword = enterNewPasswordTextField.text
+        if repeatPassword == newPassword, repeatPassword?.isEmpty == false {
+            let key = PasswordManager.shared.keyToPassword
+            let userDefaults = UserDefaults.standard
+            userDefaults.setValue(repeatNewPasswordTextField.text ?? "", forKey: key)
+            PasswordManager.shared.password = userDefaults.value(forKey: key) as? String ?? ""
             repeatNewPasswordTextField.resignFirstResponder()
             enterCurrentPasswordTextField.isSecureTextEntry = true
             enterNewPasswordTextField.isSecureTextEntry = true
