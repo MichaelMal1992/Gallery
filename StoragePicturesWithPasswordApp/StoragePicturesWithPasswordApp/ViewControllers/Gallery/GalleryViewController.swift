@@ -59,7 +59,7 @@ class GalleryViewController: UIViewController {
     }
 
     @IBAction func settingsButtonPressed(_ sender: UIButton) {
-        createNewViewController(String(describing: SettingsViewController.self))
+        createViewController(String(describing: SettingsViewController.self))
     }
 
     private func likeImageViewDidPressed() {
@@ -67,7 +67,7 @@ class GalleryViewController: UIViewController {
             self.tappableImageView.animateTappablelikeImageView()
             Manager.shared.imagesArray = self.decoding(self.getDataValue())
             if Manager.shared.imagesArray.isEmpty == true {
-                self.createAlertCancel(self.localized("emptyGallery"))
+                self.createAlert(self.localized("emptyGallery"))
             } else {
                 if let currentName = Manager.shared.currentImageName {
                     for array in Manager.shared.imagesArray {
@@ -84,7 +84,7 @@ class GalleryViewController: UIViewController {
                                 return
                             }
                         } else {
-                            self.createAlertCancel(self.localized("clickToLike"))
+                            self.createAlert(self.localized("clickToLike"))
                             return
                         }
                     }
@@ -98,13 +98,13 @@ class GalleryViewController: UIViewController {
             self.tappableImageView.animateTappableComentImageView()
             Manager.shared.imagesArray = self.decoding(self.getDataValue())
             if Manager.shared.imagesArray.isEmpty == true {
-                self.createAlertCancel(self.localized("emptyGallery"))
+                self.createAlert(self.localized("emptyGallery"))
             } else {
                 self.comentsTableView.reloadData()
                 self.setupCountComentsLabel()
                 if self.tappableImageView.comentImageViewIsTapped {
                     if Manager.shared.currentImageName == nil {
-                        self.createAlertCancel(self.localized("chooseToComment"))
+                        self.createAlert(self.localized("chooseToComment"))
                     } else {
                         UIView.animate(withDuration: 0.5) { [self] in
                             self.containerForTabelAndTextFieldView.alpha = 1
@@ -128,7 +128,7 @@ class GalleryViewController: UIViewController {
                    let currentCount = Manager.shared.currentCountImage {
                     for array in Manager.shared.imagesArray {
                         if array.name == currentName {
-                            self.createAlertActionAndCancel(self.localized("removed")) {
+                            self.createActionAlert(self.localized("removed")) {
                                 Manager.shared.imagesArray.removeAll(where: {$0.name == currentName})
                                 self.removeImageFromIndex(index: currentCount)
                                 self.setDataValue(self.encoding(Manager.shared.imagesArray))
@@ -139,15 +139,15 @@ class GalleryViewController: UIViewController {
                             }
                             return
                         } else {
-                            self.createAlertCancel(self.localized("selectToDelete"))
+                            self.createAlert(self.localized("selectToDelete"))
                             return
                         }
                     }
                 } else {
-                    self.createAlertCancel(self.localized("selectToDelete"))
+                    self.createAlert(self.localized("selectToDelete"))
                 }
             } else {
-                self.createAlertCancel(self.localized("emptyGallery"))
+                self.createAlert(self.localized("emptyGallery"))
             }
         }
     }

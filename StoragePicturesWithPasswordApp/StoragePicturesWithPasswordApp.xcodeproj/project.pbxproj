@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,9 +26,10 @@
 		843EAE492695C39A0035078B /* UIViewController+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE482695C39A0035078B /* UIViewController+Date.swift */; };
 		843EAE4B269729440035078B /* GalleryViewController+GestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE4A269729440035078B /* GalleryViewController+GestureRecognizer.swift */; };
 		843EAE4D2697373B0035078B /* SettingsViewController+GestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE4C2697373B0035078B /* SettingsViewController+GestureRecognizer.swift */; };
-		849A2E6026BFDC6B0095B9F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 849A2E6226BFDC6B0095B9F6 /* Localizable.strings */; };
 		849A2E6526BFE3ED0095B9F6 /* UIViewController+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A2E6426BFE3ED0095B9F6 /* UIViewController+Localized.swift */; };
 		849A2E6826BFF5250095B9F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 849A2E6A26BFF5250095B9F6 /* InfoPlist.strings */; };
+		849A2E7026C07CF60095B9F6 /* AuthorizationViewController+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A2E6F26C07CF60095B9F6 /* AuthorizationViewController+TextFieldDelegate.swift */; };
+		849A2E7126C083E30095B9F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 849A2E6226BFDC6B0095B9F6 /* Localizable.strings */; };
 		849C888926836E2C0029E74F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C888826836E2C0029E74F /* AppDelegate.swift */; };
 		849C888B26836E2C0029E74F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C888A26836E2C0029E74F /* SceneDelegate.swift */; };
 		849C889026836E2C0029E74F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849C888E26836E2C0029E74F /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		849A2E6426BFE3ED0095B9F6 /* UIViewController+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Localized.swift"; sourceTree = "<group>"; };
 		849A2E6926BFF5250095B9F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		849A2E6B26BFF5280095B9F6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		849A2E6F26C07CF60095B9F6 /* AuthorizationViewController+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthorizationViewController+TextFieldDelegate.swift"; sourceTree = "<group>"; };
 		849C888526836E2C0029E74F /* StoragePicturesWithPasswordApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoragePicturesWithPasswordApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849C888826836E2C0029E74F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849C888A26836E2C0029E74F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +159,14 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		849A2E6E26C07C8B0095B9F6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				849A2E6F26C07CF60095B9F6 /* AuthorizationViewController+TextFieldDelegate.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		849C887C26836E2C0029E74F = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				849C889C26836EF20029E74F /* AuthorizationViewController.swift */,
+				849A2E6E26C07C8B0095B9F6 /* Extension */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -380,8 +391,8 @@
 				849A2E6826BFF5250095B9F6 /* InfoPlist.strings in Resources */,
 				849C889526836E2F0029E74F /* LaunchScreen.storyboard in Resources */,
 				849C889226836E2F0029E74F /* Assets.xcassets in Resources */,
-				849A2E6026BFDC6B0095B9F6 /* Localizable.strings in Resources */,
 				849C889026836E2C0029E74F /* Main.storyboard in Resources */,
+				849A2E7126C083E30095B9F6 /* Localizable.strings in Resources */,
 				843EAE372694CBCE0035078B /* CommentsTableViewCell.xib in Resources */,
 				84B0198726BE7C34006530C6 /* TappableImageView.xib in Resources */,
 			);
@@ -467,6 +478,7 @@
 				843EAE362694CBCE0035078B /* CommentsTableViewCell.swift in Sources */,
 				843EAE4B269729440035078B /* GalleryViewController+GestureRecognizer.swift in Sources */,
 				843EAE2326925DC30035078B /* Manager.swift in Sources */,
+				849A2E7026C07CF60095B9F6 /* AuthorizationViewController+TextFieldDelegate.swift in Sources */,
 				849C88A8268390C60029E74F /* GalleryViewController+ImagePicker.swift in Sources */,
 				843EAE29269324980035078B /* UIViewController+GetImagesArray.swift in Sources */,
 				843EAE1B2691D8800035078B /* PasswordManager.swift in Sources */,

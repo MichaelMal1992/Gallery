@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {
 
-    func createNewViewController(_ identifier: String) {
+    func createViewController(_ identifier: String) {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyboard.instantiateViewController(identifier: identifier)
         navigationController?.pushViewController(newViewController, animated: true)

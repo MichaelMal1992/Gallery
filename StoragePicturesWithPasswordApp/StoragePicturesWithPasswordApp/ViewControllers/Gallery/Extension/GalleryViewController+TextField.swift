@@ -31,14 +31,14 @@ extension GalleryViewController: UITextFieldDelegate {
                 } else {
                     addCommentTextField.resignFirstResponder()
                     textField.text?.removeAll()
-                    createAlertCancel(localized("emptyGallery"))
+                    createAlert(localized("emptyGallery"))
                 }
             } else {
                 textField.text?.removeAll()
-                createAlertCancel(localized("spacesComment"))
+                createAlert(localized("spacesComment"))
             }
         } else {
-            createAlertCancel(localized("emptyComment"))
+            createAlert(localized("emptyComment"))
         }
     }
 

@@ -1,4 +1,3 @@
-"createPassword" = "Создайте пароль и никому не сообщайте его";
 "repeatPassword" = "Повторите пароль";
 "enterPassword" = "Введите пароль";
 "emptyGallery" = "Галерея пустая";
@@ -23,3 +22,8 @@
 "changePasswordButton" = "Сменить пароль";
 "enterNewPassword" = "Ведите новый пароль";
 "addComment" = "Напишите комментарий";
+"tagline" = "The guarded gallery";
+"recover" = "Нажмите, чтобы восстановить пароль";
+"removedPassword" = "Пароль будет удален";
+"logIn" = "Войти";
+"create" = "Создать";

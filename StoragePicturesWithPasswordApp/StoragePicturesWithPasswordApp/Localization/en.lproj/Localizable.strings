@@ -1,4 +1,3 @@
-"createPassword" = "Create the password and don't share it with others";
 "repeatPassword" = "Repeat the new password";
 "enterPassword" = "Enter the password";
 "emptyGallery" = "The gallery is empty";
@@ -23,3 +22,8 @@
 "changePasswordButton" = "Change Password";
 "enterNewPassword" = "Enter the new password";
 "addComment" = "Add comment";
+"tagline" = "The guarded gallery";
+"recover" = "Tap to recover the password";
+"removedPassword" = "The password will be removed";
+"logIn" = "Log in";
+"create" = "Create";
