@@ -14,6 +14,7 @@ class GalleryViewController: UIViewController {
     @IBOutlet weak var comentsTableView: UITableView!
     @IBOutlet weak var containerForTabelAndTextFieldView: UIView!
     @IBOutlet weak var addCommentTextField: UITextField!
+    @IBOutlet weak var cancelCommentButton: UIButton!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -24,13 +25,13 @@ class GalleryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        localizeSetup()
         likeImageViewDidPressed()
         comentImageViewDidPressed()
         trashImageViewDidPressed()
         addImageViewDidPressed()
         setupCountComentsLabel()
         hideKeyboardOnTap()
-        addCommentTextField.placeholder = localized("addComment")
         addCommentTextField.delegate = self
         comentsTableView.dataSource = self
         comentsTableView.delegate = self
@@ -52,6 +53,9 @@ class GalleryViewController: UIViewController {
                                                selector: #selector(handleHidenKeyboard(_:)),
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
+    }
+
+    @IBAction func cancelCommentButtonPressed(_ sender: UIButton) {
     }
 
     @IBAction func exitButonPressed(_ sender: UIButton) {
@@ -199,6 +203,11 @@ class GalleryViewController: UIViewController {
                 tappableImageView.countComentsLabel.isHidden = true
             }
         }
+    }
+
+    private func localizeSetup() {
+        cancelCommentButton.setTitle(localized("cancel"), for: .normal)
+        addCommentTextField.placeholder = localized("addComment")
     }
 
     @objc func handleShowKeyboard(_ notification: Notification) {
