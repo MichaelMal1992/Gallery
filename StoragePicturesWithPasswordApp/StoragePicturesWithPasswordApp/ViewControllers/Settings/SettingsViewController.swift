@@ -72,10 +72,10 @@ class SettingsViewController: UIViewController {
     }
 
     private func localization() {
-        changePasswordButton.setTitle(localized("changePasswordButton"), for: .normal)
-        enterCurrentPasswordTextField.placeholder = localized("enterPassword")
-        enterNewPasswordTextField.placeholder = localized("enterNewPassword")
-        repeatNewPasswordTextField.placeholder = localized("repeatPassword")
+        changePasswordButton.setTitle("changePasswordButton".localized, for: .normal)
+        enterCurrentPasswordTextField.placeholder = "enterPassword".localized
+        enterNewPasswordTextField.placeholder = "enterNewPassword".localized
+        repeatNewPasswordTextField.placeholder = "repeatPassword".localized
     }
 
     private func setupTextField() {

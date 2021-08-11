@@ -33,38 +33,38 @@ class AuthorizationViewController: UIViewController {
         guard let password = passwordTextField.text else {
             return
         }
-        if PasswordManager.shared.isFirstAutorization() {
+        if PasswordManager.shared.firstAutorization {
             if password.isEmpty {
-                createAlert(localized("emptyPassword"))
+                createAlert("emptyPassword".localized)
                 passwordTextField.becomeFirstResponder()
             } else {
                 let spaces = password.first(where: {$0 == " "})
                 if spaces == " " {
-                    createAlert(localized("spacesPassword"))
+                    createAlert("spacesPassword".localized)
                     passwordTextField.becomeFirstResponder()
                 } else {
                     if password == repeatPasswordTextField.text {
-                        PasswordManager.shared.savePassword(password)
+                        PasswordManager.shared.save(password)
                         createViewController(String(describing: GalleryViewController.self))
                     } else {
-                        createAlert(localized("repeatPassword"))
+                        createAlert("repeatPassword".localized)
                         repeatPasswordTextField.becomeFirstResponder()
                     }
                 }
             }
         } else {
-            if PasswordManager.shared.validatePassword(password) {
+            if PasswordManager.shared.validate(password) {
                 createViewController(String(describing: GalleryViewController.self))
             } else {
-                createAlert(localized("incorrectPassword"))
+                createAlert("incorrectPassword".localized)
                 passwordTextField.becomeFirstResponder()
             }
         }
     }
 
     @IBAction private func recoverPasswordButtonPressed(_ sender: UIButton) {
-        createActionAlert(localized("removedPassword")) {
-            PasswordManager.shared.removePassword()
+        createActionAlert("removedPassword".localized) {
+            PasswordManager.shared.remove()
             self.localizeSetup()
             self.interfaceSetup()
         }
@@ -95,7 +95,7 @@ class AuthorizationViewController: UIViewController {
         passwordTextField.returnKeyType = .continue
         repeatPasswordTextField.isSecureTextEntry = true
         repeatPasswordTextField.returnKeyType = .continue
-        if PasswordManager.shared.isFirstAutorization() {
+        if PasswordManager.shared.firstAutorization {
             repeatPasswordContainerHeightConstraint.constant = 34
             recoverPasswordButton.isHidden = true
         } else {
@@ -105,15 +105,15 @@ class AuthorizationViewController: UIViewController {
     }
 
     private func localizeSetup() {
-        repeatPasswordTextField.placeholder = localized("repeatPassword")
-        taglineLabel.text = localized("tagline")
-        if PasswordManager.shared.isFirstAutorization() {
-            passwordTextField.placeholder = localized("enterNewPassword")
-            logInButton.setTitle(localized("create"), for: .normal)
+        repeatPasswordTextField.placeholder = "repeatPassword".localized
+        taglineLabel.text = "tagline".localized
+        if PasswordManager.shared.firstAutorization {
+            passwordTextField.placeholder = "enterNewPassword".localized
+            logInButton.setTitle("create".localized, for: .normal)
         } else {
-            passwordTextField.placeholder = localized("enterPassword")
-            recoverPasswordButton.setTitle(localized("recover"), for: .normal)
-            logInButton.setTitle(localized("logIn"), for: .normal)
+            passwordTextField.placeholder = "enterPassword".localized
+            recoverPasswordButton.setTitle("recover".localized, for: .normal)
+            logInButton.setTitle("logIn".localized, for: .normal)
         }
     }
 }

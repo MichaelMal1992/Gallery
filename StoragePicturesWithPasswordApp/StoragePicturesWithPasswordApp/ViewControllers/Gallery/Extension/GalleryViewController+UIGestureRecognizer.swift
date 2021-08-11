@@ -22,6 +22,6 @@ extension GalleryViewController: UIGestureRecognizerDelegate {
         let tapper = UITapGestureRecognizer(target: self, action: #selector(handletapGestureRecognizer(_:)))
         tapper.delegate = self
         tapper.cancelsTouchesInView = false
-        comentsTableView.addGestureRecognizer(tapper)
+        commentsTableView.addGestureRecognizer(tapper)
     }
 }

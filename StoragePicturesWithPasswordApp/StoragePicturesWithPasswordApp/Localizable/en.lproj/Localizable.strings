@@ -3,7 +3,7 @@
 "emptyGallery" = "The gallery is empty";
 "clickToLike" = "Click on the photo and send like";
 "chooseToComment" = "Choose the photo and writing the comment";
-"removed" = "The photo will be removed";
+"removed" = "Do you want to delete this photo?";
 "selectToDelete" = "Select (tap) the photo to delete it";
 "emptyComment" = "The comment cannot be empty";
 "spacesComment" = "The comment cannot be only from a spaces";
@@ -27,3 +27,11 @@
 "removedPassword" = "The password will be removed";
 "logIn" = "Log in";
 "create" = "Create";
+"like" = "Like";
+"comment" = "Comment";
+"trash" = "Trash";
+"add" = "Add";
+"settings" = "Settings";
+"exit" = "Exit";
+"willExit" = "Do you want to exit?";
+"goSettings" = "Go to settings?";

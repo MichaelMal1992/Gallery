@@ -15,7 +15,7 @@ class PasswordManager {
     private let passwordKey = KeychainKey<String>(key: "_password")
     private init() { }
 
-    func removePassword() {
+    func remove() {
         do {
             try keychain.removeAll()
         } catch {
@@ -23,7 +23,7 @@ class PasswordManager {
         }
     }
 
-    func validatePassword(_ password: String) -> Bool {
+    func validate(_ password: String) -> Bool {
         do {
             let storedPassword = try keychain.get(passwordKey)
             return password == storedPassword
@@ -33,7 +33,7 @@ class PasswordManager {
         }
     }
 
-    func savePassword(_ password: String) {
+    func save(_ password: String) {
         do {
             try keychain.set(password, for: passwordKey)
         } catch {
@@ -41,7 +41,7 @@ class PasswordManager {
         }
     }
 
-    func isFirstAutorization() -> Bool {
+    var firstAutorization: Bool {
         do {
             if let autorization = try keychain.get(passwordKey) {
                 return autorization.isEmpty == true

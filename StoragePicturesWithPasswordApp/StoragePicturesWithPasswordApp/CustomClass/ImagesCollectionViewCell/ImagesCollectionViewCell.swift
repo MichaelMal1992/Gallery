@@ -11,10 +11,6 @@ class ImagesCollectionViewCell: UICollectionViewCell {
 
     static var identifier = String(describing: ImagesCollectionViewCell.self)
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var imageCollectionViewCellImageView: UIImageView!
-    @IBOutlet weak var labelCollectionViewCellLabel: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    @IBOutlet weak var collectionViewCellImageView: UIImageView!
+    @IBOutlet weak var collectionViewCellLabel: UILabel!
 }

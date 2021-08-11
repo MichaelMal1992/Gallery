@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOC-FE-6tf">
                         <rect key="frame" x="0.0" y="0.0" width="383" height="358"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. create (07.06.2021 14:00)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ck-pK-oix">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. create (07.06.2021 14:00)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ck-pK-oix">
                                 <rect key="frame" x="5" y="341" width="373" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -52,11 +52,11 @@
             </constraints>
             <size key="customSize" width="383" height="358"/>
             <connections>
+                <outlet property="collectionViewCellImageView" destination="PAJ-cJ-TYs" id="j0Z-pW-ySn"/>
+                <outlet property="collectionViewCellLabel" destination="0ck-pK-oix" id="8r2-qD-hdp"/>
                 <outlet property="containerView" destination="vOC-FE-6tf" id="JWg-h4-5Bb"/>
-                <outlet property="imageCollectionViewCellImageView" destination="PAJ-cJ-TYs" id="j0Z-pW-ySn"/>
-                <outlet property="labelCollectionViewCellLabel" destination="0ck-pK-oix" id="8r2-qD-hdp"/>
             </connections>
-            <point key="canvasLocation" x="-99.275362318840592" y="73.660714285714278"/>
+            <point key="canvasLocation" x="-70" y="38"/>
         </collectionViewCell>
     </objects>
 </document>
