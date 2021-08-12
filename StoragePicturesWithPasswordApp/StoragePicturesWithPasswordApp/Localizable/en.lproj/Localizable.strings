@@ -10,6 +10,7 @@
 "camera" = "Camera";
 "library" = "Media library";
 "cancel" = "Cancel";
+"close" = "Close";
 "notPermission" = "No persmission for the camera usage, check the device app settings";
 "error" = "Error";
 "incorrectPasword" = "Incorrect the password, try again";

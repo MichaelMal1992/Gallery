@@ -9,9 +9,9 @@ import UIKit
 
 class GalleryViewController: UIViewController {
 
-    @IBOutlet weak var imagesCollectionView: UICollectionView!
-    @IBOutlet weak var commentsTableView: UITableView!
-    @IBOutlet weak var addCommentTextField: UITextField!
+    @IBOutlet weak private var imagesCollectionView: UICollectionView!
+    @IBOutlet weak private var commentsTableView: UITableView!
+    @IBOutlet weak private var addCommentTextField: UITextField!
     @IBOutlet weak private var countsCommentsLabel: UILabel!
     @IBOutlet weak private var likeButton: UIButton!
     @IBOutlet weak private var containerForTabelAndTextFieldView: UIView!
@@ -24,6 +24,7 @@ class GalleryViewController: UIViewController {
     @IBOutlet weak private var settingsLabel: UILabel!
     @IBOutlet weak private var exitLabel: UILabel!
     @IBOutlet weak private var countsCommentContainerView: UIView!
+    @IBOutlet weak private var containerTableBottomConstraint: NSLayoutConstraint!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -39,7 +40,6 @@ class GalleryViewController: UIViewController {
         super.viewDidLoad()
         interfaceSetup()
         localizeSetup()
-        hideKeyboardOnTap()
         imagesCollectionView.dataSource = self
         imagesCollectionView.delegate = self
 
@@ -61,7 +61,6 @@ class GalleryViewController: UIViewController {
     }
 
     @IBAction private func cancelCommentButtonPressed(_ sender: UIButton) {
-        addCommentTextField.text?.removeAll()
         hidenComments()
     }
 
@@ -126,7 +125,7 @@ class GalleryViewController: UIViewController {
                     PictureManager.shared.remove(PictureManager.shared.currentName)
                     PictureManager.shared.selectedPicture = true
                     self.imagesCollectionView.reloadData()
-                    self.updateCount()
+                    self.updateCommentsCount()
                     self.updateLike()
                 }
             }
@@ -135,12 +134,18 @@ class GalleryViewController: UIViewController {
 
     @IBAction private func addButtonPressed(_ sender: UIButton) {
         addPicture()
+        PictureManager.shared.selectedIndexPath = nil
+        PictureManager.shared.currentName = ""
+        imagesCollectionView.scrollDirection(.vertical)
+        updateCommentsCount()
+        updateLike()
     }
 
     private func interfaceSetup() {
         containerHeightConstraint.constant = 0
+        containerTableBottomConstraint.constant = 0
         cancelCommentButton.isHidden = true
-        updateCount()
+        updateCommentsCount()
         updateLike()
     }
 
@@ -155,7 +160,7 @@ class GalleryViewController: UIViewController {
         addCommentTextField.placeholder = "addComment".localized
     }
 
-    func showComments() {
+    private func showComments() {
         containerHeightConstraint.constant = view.frame.height
         UIView.animate(withDuration: 1) {
             self.view.layoutIfNeeded()
@@ -164,12 +169,29 @@ class GalleryViewController: UIViewController {
         }
     }
 
-    func hidenComments() {
+    private func hidenComments() {
+        addCommentTextField.text?.removeAll()
+        addCommentTextField.resignFirstResponder()
         containerHeightConstraint.constant = 0
         UIView.animate(withDuration: 1) {
             self.view.layoutIfNeeded()
             self.cancelCommentButton.isHidden = true
         }
+    }
+
+    func createIndexPath(_ center: CGPoint) {
+        if let indexPath = imagesCollectionView.indexPathForItem(at: center) {
+            let array = ImageDataManager.shared.get
+            PictureManager.shared.currentName = array[indexPath.item].name
+            }
+    }
+
+    func updateTableView() {
+        commentsTableView.reloadData()
+    }
+
+    func updateCollectionView() {
+        imagesCollectionView.reloadData()
     }
 
     func updateLike() {
@@ -181,7 +203,7 @@ class GalleryViewController: UIViewController {
         }
     }
 
-    func updateCount() {
+    func updateCommentsCount() {
         let array = ImageDataManager.shared.get
         if let image = array.first(where: {$0.name == PictureManager.shared.currentName}) {
             if image.comments.text.isEmpty {
@@ -202,12 +224,11 @@ class GalleryViewController: UIViewController {
 
     @objc private func handleShowKeyboard(_ notification: Notification) {
         if let frame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
-            let inset = UIEdgeInsets(top: 0, left: 0, bottom: frame.height, right: 0)
-            commentsTableView.contentInset = inset
+            containerTableBottomConstraint.constant = frame.height - 70
         }
     }
 
     @objc private func handleHidenKeyboard(_ notification: Notification) {
-        commentsTableView.contentInset = .zero
+        containerTableBottomConstraint.constant = 0
     }
 }

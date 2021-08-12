@@ -10,21 +10,13 @@ import AVKit
 
 extension GalleryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    private func createImagePicker(sourceType: UIImagePickerController.SourceType) {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.allowsEditing = true
-        picker.sourceType = sourceType
-        present(picker, animated: true)
-        }
-
     func addPicture() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "camera".localized, style: .default, handler: { _ in
             if self.checkCameraPermissions() {
             self.createImagePicker(sourceType: .camera)
         } else {
-            self.showErrorAlert()
+            self.createAlert("notPermission".localized)
         }
         }))
         alert.addAction(UIAlertAction(title: "library".localized, style: .default, handler: { _ in
@@ -47,12 +39,12 @@ extension GalleryViewController: UIImagePickerControllerDelegate, UINavigationCo
         #endif
     }
 
-    private func showErrorAlert() {
-        let title = "error".localized
-        let message = "notPermission".localized
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "continue".localized, style: .cancel))
-        present(alert, animated: true)
+    private func createImagePicker(sourceType: UIImagePickerController.SourceType) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        picker.sourceType = sourceType
+        present(picker, animated: true)
     }
 
     func imagePickerController(_ picker: UIImagePickerController,
@@ -61,7 +53,7 @@ extension GalleryViewController: UIImagePickerControllerDelegate, UINavigationCo
             return
         }
         PictureManager.shared.save(image)
-        imagesCollectionView.reloadData()
+        updateCollectionView()
         picker.dismiss(animated: true)
     }
 }

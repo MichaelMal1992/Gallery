@@ -11,6 +11,7 @@ import SwiftyKeychainKit
 class PasswordManager {
 
     static let shared = PasswordManager()
+
     private lazy var keychain = Keychain(service: "michael.vasm.StoragePicturesWithPasswordApp")
     private let passwordKey = KeychainKey<String>(key: "_password")
     private init() { }

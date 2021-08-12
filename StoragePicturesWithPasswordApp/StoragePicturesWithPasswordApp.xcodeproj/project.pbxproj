@@ -20,7 +20,6 @@
 		843EAE412695BA780035078B /* GalleryViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE402695BA780035078B /* GalleryViewController+UICollectionView.swift */; };
 		843EAE462695C0160035078B /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE442695C0160035078B /* ImagesCollectionViewCell.swift */; };
 		843EAE472695C0160035078B /* ImagesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843EAE452695C0160035078B /* ImagesCollectionViewCell.xib */; };
-		843EAE4B269729440035078B /* GalleryViewController+UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE4A269729440035078B /* GalleryViewController+UIGestureRecognizer.swift */; };
 		843EAE4D2697373B0035078B /* SettingsViewController+GestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE4C2697373B0035078B /* SettingsViewController+GestureRecognizer.swift */; };
 		8473487E26C260E6001FC79C /* Date+CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473487D26C260E6001FC79C /* Date+CurrentDate.swift */; };
 		8473488026C2623C001FC79C /* ImageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473487F26C2623C001FC79C /* ImageDataManager.swift */; };
@@ -59,7 +58,6 @@
 		843EAE402695BA780035078B /* GalleryViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewController+UICollectionView.swift"; sourceTree = "<group>"; };
 		843EAE442695C0160035078B /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		843EAE452695C0160035078B /* ImagesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesCollectionViewCell.xib; sourceTree = "<group>"; };
-		843EAE4A269729440035078B /* GalleryViewController+UIGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewController+UIGestureRecognizer.swift"; sourceTree = "<group>"; };
 		843EAE4C2697373B0035078B /* SettingsViewController+GestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewController+GestureRecognizer.swift"; sourceTree = "<group>"; };
 		8473487D26C260E6001FC79C /* Date+CurrentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CurrentDate.swift"; sourceTree = "<group>"; };
 		8473487F26C2623C001FC79C /* ImageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataManager.swift; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				849C88A7268390C60029E74F /* GalleryViewController+UIImagePicker.swift */,
 				843EAE402695BA780035078B /* GalleryViewController+UICollectionView.swift */,
 				843EAE2E2694C5720035078B /* GalleryViewController+UITableView.swift */,
-				843EAE4A269729440035078B /* GalleryViewController+UIGestureRecognizer.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -212,9 +209,9 @@
 			children = (
 				8473487D26C260E6001FC79C /* Date+CurrentDate.swift */,
 				849A2E6426BFE3ED0095B9F6 /* String+Localizable.swift */,
+				841CA8F826C29B9700C90C05 /* UICollectionView+ScrollDirection.swift */,
 				849C889E268370250029E74F /* UIViewController+CreateViewController.swift */,
 				849C88A1268374A70029E74F /* UIViewController+Alert.swift */,
-				841CA8F826C29B9700C90C05 /* UICollectionView+ScrollDirection.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -468,7 +465,6 @@
 				843EAE2D2694A3C90035078B /* SettingsViewController+TextField.swift in Sources */,
 				849C88A426838E730029E74F /* SettingsViewController.swift in Sources */,
 				843EAE362694CBCE0035078B /* CommentsTableViewCell.swift in Sources */,
-				843EAE4B269729440035078B /* GalleryViewController+UIGestureRecognizer.swift in Sources */,
 				849A2E7026C07CF60095B9F6 /* AuthorizationViewController+TextFieldDelegate.swift in Sources */,
 				8473488026C2623C001FC79C /* ImageDataManager.swift in Sources */,
 				849C88A8268390C60029E74F /* GalleryViewController+UIImagePicker.swift in Sources */,

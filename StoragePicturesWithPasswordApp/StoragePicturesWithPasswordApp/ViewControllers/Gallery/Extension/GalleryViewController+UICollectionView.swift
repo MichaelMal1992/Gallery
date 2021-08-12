@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 extension GalleryViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -28,7 +27,7 @@ extension GalleryViewController: UICollectionViewDataSource {
         if PictureManager.shared.selectedPicture == true {
             PictureManager.shared.selectedPicture = nil
             PictureManager.shared.currentName = array[indexPath.item].name
-            updateCount()
+            updateCommentsCount()
             updateLike()
         }
         return cell
@@ -50,22 +49,21 @@ extension GalleryViewController: UICollectionViewDelegate {
             collectionView.scrollDirection(.vertical)
             PictureManager.shared.currentName = ""
         }
-        updateCount()
+        collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: false)
+        updateCommentsCount()
         updateLike()
-        addCommentTextField.resignFirstResponder()
-        collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let center = CGPoint(x: scrollView.contentOffset.x + (scrollView.frame.width / 2),
-                             y: 0)
-        if let indexPath = imagesCollectionView.indexPathForItem(at: center) {
-            let array = ImageDataManager.shared.get
-            PictureManager.shared.currentName = array[indexPath.item].name
-            }
-        updateCount()
-        updateLike()
-        addCommentTextField.resignFirstResponder()
+        if scrollView.alwaysBounceVertical {
+            return
+        } else {
+            let center = CGPoint(x: scrollView.contentOffset.x + (scrollView.frame.width / 2),
+                                 y: 0)
+            createIndexPath(center)
+            updateCommentsCount()
+            updateLike()
+        }
     }
 }
 

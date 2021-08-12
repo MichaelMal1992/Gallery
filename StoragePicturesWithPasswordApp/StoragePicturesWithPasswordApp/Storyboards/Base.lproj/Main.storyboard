@@ -104,7 +104,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nji-gs-eJI">
-                                <rect key="frame" x="79.5" y="454" width="216" height="33"/>
+                                <rect key="frame" x="79.5" y="439" width="216" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Tap to recover the password">
                                     <color key="titleColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -125,9 +125,11 @@
                             <constraint firstItem="8dR-bf-21T" firstAttribute="top" secondItem="bH3-kJ-wG3" secondAttribute="top" id="P2E-kf-dYg"/>
                             <constraint firstItem="8dR-bf-21T" firstAttribute="leading" secondItem="bH3-kJ-wG3" secondAttribute="leading" id="S1n-eR-rIb"/>
                             <constraint firstItem="bH3-kJ-wG3" firstAttribute="bottom" secondItem="8dR-bf-21T" secondAttribute="bottom" id="SWi-A4-We2"/>
-                            <constraint firstItem="SFM-ps-RYv" firstAttribute="top" secondItem="BqW-1Z-b4r" secondAttribute="bottom" constant="10" id="UqO-CZ-FSR"/>
+                            <constraint firstItem="SFM-ps-RYv" firstAttribute="top" secondItem="BqW-1Z-b4r" secondAttribute="bottom" constant="10" id="UqO-CZ-FSR">
+                                <variation key="heightClass=compact-widthClass=regular" constant="100"/>
+                            </constraint>
                             <constraint firstItem="BqW-1Z-b4r" firstAttribute="top" secondItem="EfO-U6-TAR" secondAttribute="bottom" constant="10" id="XLC-Nt-9uq"/>
-                            <constraint firstItem="Nji-gs-eJI" firstAttribute="top" secondItem="ruA-Mq-kC4" secondAttribute="bottom" constant="20" id="XvC-D1-zXr"/>
+                            <constraint firstItem="Nji-gs-eJI" firstAttribute="top" secondItem="ruA-Mq-kC4" secondAttribute="bottom" constant="5" id="XvC-D1-zXr"/>
                             <constraint firstItem="fJg-pg-Xzx" firstAttribute="leading" secondItem="bH3-kJ-wG3" secondAttribute="leading" constant="20" id="Xyb-Cd-1PX"/>
                             <constraint firstItem="bH3-kJ-wG3" firstAttribute="trailing" secondItem="EfO-U6-TAR" secondAttribute="trailing" constant="20" id="c1W-qG-oQP"/>
                             <constraint firstItem="BqW-1Z-b4r" firstAttribute="height" secondItem="993-HD-eHB" secondAttribute="height" multiplier="0.3" id="cv4-eD-6bC"/>
@@ -139,6 +141,11 @@
                             <constraint firstItem="fJg-pg-Xzx" firstAttribute="top" secondItem="SFM-ps-RYv" secondAttribute="bottom" constant="10" id="rfB-w8-isJ"/>
                             <constraint firstItem="BqW-1Z-b4r" firstAttribute="centerX" secondItem="993-HD-eHB" secondAttribute="centerX" id="sXu-1t-taP"/>
                         </constraints>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="UqO-CZ-FSR"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Qd3-iM-vsb"/>
                     <connections>
@@ -154,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQW-zb-AJp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1001.25" y="-311.61971830985914"/>
+            <point key="canvasLocation" x="-1002.5487256371815" y="-312.80000000000001"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="303-Ce-y0d">
@@ -194,12 +201,6 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ntq-BA-wFg">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="icD-i0-hEg"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="9az-An-S1I"/>
-                            </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N5q-Lz-P0c">
                                 <rect key="frame" x="0.0" y="392" width="375" height="200"/>
                                 <subviews>
@@ -324,7 +325,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2T-vp-kdc">
-                                        <rect key="frame" x="27" y="36.5" width="21.5" height="13.5"/>
+                                        <rect key="frame" x="27" y="36.5" width="21" height="13.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -459,6 +460,7 @@
                         <outlet property="commentsTableView" destination="SaF-Wi-4Uy" id="tpu-B7-J6d"/>
                         <outlet property="containerForTabelAndTextFieldView" destination="N5q-Lz-P0c" id="5ng-Xe-pw0"/>
                         <outlet property="containerHeightConstraint" destination="h9q-mx-qqN" id="TNu-Gj-zwx"/>
+                        <outlet property="containerTableBottomConstraint" destination="iW1-9N-tJ8" id="DpH-tW-uRk"/>
                         <outlet property="countsCommentContainerView" destination="7YY-op-EGE" id="6kU-BA-WWD"/>
                         <outlet property="countsCommentsLabel" destination="Vv2-1I-2vC" id="ROF-6b-ONe"/>
                         <outlet property="exitLabel" destination="u5b-SX-4AX" id="oBP-Xl-q2d"/>

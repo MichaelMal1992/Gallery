@@ -10,6 +10,7 @@ import UIKit
 class PictureManager {
 
     static let shared = PictureManager()
+
     var currentName = ""
     var selectedIndexPath: IndexPath?
     var selectedPicture: Bool?

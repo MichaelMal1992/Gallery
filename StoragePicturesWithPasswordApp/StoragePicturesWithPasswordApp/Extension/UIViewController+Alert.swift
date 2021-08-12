@@ -11,7 +11,7 @@ extension UIViewController {
 
     func createAlert(_ title: String) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "cancel".localized, style: .cancel))
+        alert.addAction(UIAlertAction(title: "close".localized, style: .cancel))
         present(alert, animated: true)
     }
 
