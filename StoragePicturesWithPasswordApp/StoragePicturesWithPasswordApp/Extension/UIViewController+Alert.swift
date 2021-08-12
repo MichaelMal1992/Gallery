@@ -23,4 +23,20 @@ extension UIViewController {
         }))
         present(alert, animated: true)
     }
+
+    func createChangeCommentAllert(_ tableView: UITableView,
+                                   changeCompletion: @escaping () -> Void,
+                                   deleteCompletion: @escaping () -> Void) {
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "cancel".localized, style: .cancel, handler: { _ in
+            tableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "change".localized, style: .default, handler: { _ in
+            changeCompletion()
+        }))
+        alert.addAction(UIAlertAction(title: "delete".localized, style: .default, handler: { _ in
+            deleteCompletion()
+        }))
+        present(alert, animated: true)
+    }
 }

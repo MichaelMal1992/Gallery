@@ -19,6 +19,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08/07/2021, 14:08" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPh-zt-Rk1">
                         <rect key="frame" x="5" y="87" width="386" height="11"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                         <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
@@ -32,6 +33,7 @@
                     </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <gestureRecognizers/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Jos-sM-N7a" secondAttribute="trailing" constant="5" id="HYk-uQ-HlW"/>
                     <constraint firstItem="uPh-zt-Rk1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="IiK-TS-tjs"/>
@@ -44,6 +46,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="H2p-sc-9uM" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" id="Kqo-VY-LmA"/>
                 <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" id="mnw-4Y-gzG"/>

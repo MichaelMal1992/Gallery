@@ -36,3 +36,6 @@
 "exit" = "Exit";
 "willExit" = "Do you want to exit?";
 "goSettings" = "Go to settings?";
+"delete" = "Delete";
+"change" = "Change";
+"changed" = "Changed";

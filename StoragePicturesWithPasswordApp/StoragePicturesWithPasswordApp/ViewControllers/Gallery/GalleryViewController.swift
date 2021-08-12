@@ -38,6 +38,7 @@ class GalleryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        longPress()
         interfaceSetup()
         localizeSetup()
         imagesCollectionView.dataSource = self
@@ -115,6 +116,7 @@ class GalleryViewController: UIViewController {
     }
 
     @IBAction private func trashButtonPressed(_ sender: UIButton) {
+        hidenComments()
         if PictureManager.shared.namesArray.isEmpty {
             createAlert("emptyGallery".localized)
         } else {
@@ -133,12 +135,14 @@ class GalleryViewController: UIViewController {
     }
 
     @IBAction private func addButtonPressed(_ sender: UIButton) {
-        addPicture()
+        hidenComments()
         PictureManager.shared.selectedIndexPath = nil
+        PictureManager.shared.selectedPicture = nil
         PictureManager.shared.currentName = ""
         imagesCollectionView.scrollDirection(.vertical)
         updateCommentsCount()
         updateLike()
+        addPicture()
     }
 
     private func interfaceSetup() {
@@ -169,6 +173,12 @@ class GalleryViewController: UIViewController {
         }
     }
 
+    private func longPress() {
+        let longPress = UILongPressGestureRecognizer()
+        longPress.minimumPressDuration = 0.5
+        longPress.addTarget(self, action: #selector(longPressHandler(_:)))
+        commentsTableView.addGestureRecognizer(longPress)
+    }
     private func hidenComments() {
         addCommentTextField.text?.removeAll()
         addCommentTextField.resignFirstResponder()
@@ -206,19 +216,40 @@ class GalleryViewController: UIViewController {
     func updateCommentsCount() {
         let array = ImageDataManager.shared.get
         if let image = array.first(where: {$0.name == PictureManager.shared.currentName}) {
-            if image.comments.text.isEmpty {
+            if image.comments.isEmpty {
                 countsCommentContainerView.isHidden = true
             } else {
-                if image.comments.text.count > 99 {
+                if image.comments.count > 99 {
                     countsCommentsLabel.text = "99+"
                     countsCommentContainerView.isHidden = false
                 } else {
                     countsCommentContainerView.isHidden = false
-                    countsCommentsLabel.text = "\(image.comments.text.count)"
+                    countsCommentsLabel.text = "\(image.comments.count)"
                 }
             }
         } else {
             countsCommentContainerView.isHidden = true
+        }
+    }
+
+    @objc private func longPressHandler(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == UILongPressGestureRecognizer.State.began {
+            let touchPoint = sender.location(in: commentsTableView)
+            if let indexPath = commentsTableView.indexPathForRow(at: touchPoint) {
+                if let cell = commentsTableView.cellForRow(at: indexPath) as? CommentsTableViewCell {
+                    cell.commentContainerView.backgroundColor = .lightGray
+                    createChangeCommentAllert(commentsTableView, changeCompletion: {
+                        CommentManager.shared.selectedChange = true
+                        CommentManager.shared.currentComment = cell.commentLabel.text ?? ""
+                        self.addCommentTextField.becomeFirstResponder()
+                        self.addCommentTextField.text = cell.commentLabel.text
+                    }, deleteCompletion: {
+                        CommentManager.shared.deleteComment(cell.commentLabel.text ?? "")
+                        self.commentsTableView.reloadData()
+                        self.updateCommentsCount()
+                    })
+                }
+            }
         }
     }
 
