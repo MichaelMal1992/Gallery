@@ -9,78 +9,75 @@ import UIKit
 
 extension SettingsViewController: UITextFieldDelegate {
 
-   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    switch textField {
-    case enterCurrentPasswordTextField:
-        guard let password = enterCurrentPasswordTextField.text else {
-            return false
-        }
-        if  PasswordManager.shared.validate(password) {
-            enterCurrentPasswordTextField.resignFirstResponder()
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case enterCurrentPasswordTextField:
             enterNewPasswordTextField.becomeFirstResponder()
-            enterNewPasswordTextField.isHidden = false
-            showNewPasswordButton.isHidden = false
             return true
-        } else {
-            createAlert("incorrectPassword".localized)
+        case enterNewPasswordTextField:
+            repeatNewPasswordTextField.becomeFirstResponder()
             return true
-        }
-    case enterNewPasswordTextField:
-        guard let newPassword = enterNewPasswordTextField.text else {
+        case repeatNewPasswordTextField:
+            repeatNewPasswordTextField.resignFirstResponder()
+            return true
+        default:
             return false
         }
-        if PasswordManager.shared.validate(newPassword) == false, newPassword.isEmpty == false {
-            if newPassword.first(where: {$0 == " "}) != nil {
-                createAlert("spacesPassword".localized)
-            } else {
-                enterNewPasswordTextField.resignFirstResponder()
-                repeatNewPasswordTextField.becomeFirstResponder()
-                repeatNewPasswordTextField.isHidden = false
-                showRepeatPasswordButton.isHidden = false
+    }
+
+    func validateCurrentPassword() -> Bool {
+        if let password = enterCurrentPasswordTextField.text {
+            if PasswordManager.shared.validate(password) {
+                enterNewPasswordTextField.becomeFirstResponder()
                 return true
+            } else {
+                createAlert("incorrectPassword".localized)
+                enterCurrentPasswordTextField.becomeFirstResponder()
+                return false
             }
-        } else {
-            if PasswordManager.shared.validate(newPassword) {
-                createAlert("differentPassword".localized)
-            }
+        }
+        return false
+    }
+
+    func validateNewPassword() -> Bool {
+        if let newPassword = enterNewPasswordTextField.text,
+           let password = enterCurrentPasswordTextField.text {
             if newPassword.isEmpty {
                 createAlert("emptyPassword".localized)
+                enterCurrentPasswordTextField.becomeFirstResponder()
+                return false
+            } else {
+                let spaces = newPassword.first(where: {$0 == " "})
+                if spaces == " " {
+                    createAlert("spacesPassword".localized)
+                    enterCurrentPasswordTextField.becomeFirstResponder()
+                    return false
+                } else {
+                    if newPassword == password {
+                        createAlert("differentPassword".localized)
+                        return false
+                    } else {
+                        repeatNewPasswordTextField.becomeFirstResponder()
+                        return true
+                    }
+                }
             }
         }
-    case repeatNewPasswordTextField:
+        return false
+    }
+
+    func validateRepeatPassword() -> Bool {
         if let repeatPassword = repeatNewPasswordTextField.text,
            let newPassword = enterNewPasswordTextField.text {
-            if repeatPassword == newPassword, repeatPassword.isEmpty == false {
-                PasswordManager.shared.save(repeatPassword)
+            if repeatPassword == newPassword {
                 repeatNewPasswordTextField.resignFirstResponder()
-                defaultConfigurations()
-                createAlert("changedPassword".localized)
                 return true
             } else {
                 createAlert("repeatPassword".localized)
+                repeatNewPasswordTextField.becomeFirstResponder()
+                return false
             }
         }
-    default:
-        textField.resignFirstResponder()
-    }
-    return false
-   }
-
-    private func defaultConfigurations() {
-        enterCurrentPasswordTextField.isSecureTextEntry = true
-        enterNewPasswordTextField.isSecureTextEntry = true
-        repeatNewPasswordTextField.isSecureTextEntry = true
-        enterCurrentPasswordTextField.text?.removeAll()
-        enterNewPasswordTextField.text?.removeAll()
-        repeatNewPasswordTextField.text?.removeAll()
-        enterNewPasswordTextField.isHidden = true
-        repeatNewPasswordTextField.isHidden = true
-        showNewPasswordButton.isHidden = true
-        showRepeatPasswordButton.isHidden = true
-        showCurrentPasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-        showNewPasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-        showRepeatPasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-        containerForTextFieldPasswordView.alpha = 0
-        changePasswordButton.isEnabled = true
+        return false
     }
 }

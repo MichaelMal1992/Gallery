@@ -78,16 +78,6 @@ class AuthorizationViewController: UIViewController {
         showOrHidenText(sender, repeatPasswordTextField)
     }
 
-    private func showOrHidenText(_ sender: UIButton, _ textField: UITextField) {
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected {
-            textField.isSecureTextEntry = false
-            sender.setImage(UIImage(systemName: "eye"), for: .normal)
-        } else {
-            textField.isSecureTextEntry = true
-            sender.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-        }
-    }
     private func interfaceSetup() {
         passwordTextField.delegate = self
         repeatPasswordTextField.delegate = self

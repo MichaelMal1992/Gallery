@@ -39,3 +39,4 @@
 "delete" = "Delete";
 "change" = "Change";
 "changed" = "Changed";
+"noPhotos" = "The gallery is empty.\nClick to - Add, if you want to add a photo";

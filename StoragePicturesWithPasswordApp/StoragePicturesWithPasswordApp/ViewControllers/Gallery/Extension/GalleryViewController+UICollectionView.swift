@@ -10,6 +10,11 @@ extension GalleryViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let array = ImageDataManager.shared.get
+        if array.isEmpty {
+            isEmptyGallery = true
+        } else {
+            isEmptyGallery = false
+        }
         return array.count
     }
 

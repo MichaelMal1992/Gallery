@@ -10,6 +10,7 @@
 		841CA8F926C29B9700C90C05 /* UICollectionView+ScrollDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CA8F826C29B9700C90C05 /* UICollectionView+ScrollDirection.swift */; };
 		841CA8FB26C2A2F800C90C05 /* CommentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CA8FA26C2A2F800C90C05 /* CommentManager.swift */; };
 		841CA8FE26C2D1E600C90C05 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CA8FD26C2D1E600C90C05 /* Direction.swift */; };
+		841CA90026C67C1200C90C05 /* UIViewController+ShowOrHidenText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CA8FF26C67C1200C90C05 /* UIViewController+ShowOrHidenText.swift */; };
 		843EAE1B2691D8800035078B /* PasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE1A2691D8800035078B /* PasswordManager.swift */; };
 		843EAE2B2694A1D80035078B /* GalleryViewController+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE2A2694A1D80035078B /* GalleryViewController+UITextField.swift */; };
 		843EAE2D2694A3C90035078B /* SettingsViewController+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE2C2694A3C90035078B /* SettingsViewController+TextField.swift */; };
@@ -20,7 +21,6 @@
 		843EAE412695BA780035078B /* GalleryViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE402695BA780035078B /* GalleryViewController+UICollectionView.swift */; };
 		843EAE462695C0160035078B /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE442695C0160035078B /* ImagesCollectionViewCell.swift */; };
 		843EAE472695C0160035078B /* ImagesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843EAE452695C0160035078B /* ImagesCollectionViewCell.xib */; };
-		843EAE4D2697373B0035078B /* SettingsViewController+GestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EAE4C2697373B0035078B /* SettingsViewController+GestureRecognizer.swift */; };
 		8473487E26C260E6001FC79C /* Date+CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473487D26C260E6001FC79C /* Date+CurrentDate.swift */; };
 		8473488026C2623C001FC79C /* ImageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473487F26C2623C001FC79C /* ImageDataManager.swift */; };
 		849A2E6526BFE3ED0095B9F6 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A2E6426BFE3ED0095B9F6 /* String+Localizable.swift */; };
@@ -48,6 +48,7 @@
 		841CA8F826C29B9700C90C05 /* UICollectionView+ScrollDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ScrollDirection.swift"; sourceTree = "<group>"; };
 		841CA8FA26C2A2F800C90C05 /* CommentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentManager.swift; sourceTree = "<group>"; };
 		841CA8FD26C2D1E600C90C05 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		841CA8FF26C67C1200C90C05 /* UIViewController+ShowOrHidenText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowOrHidenText.swift"; sourceTree = "<group>"; };
 		843EAE1A2691D8800035078B /* PasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordManager.swift; sourceTree = "<group>"; };
 		843EAE2A2694A1D80035078B /* GalleryViewController+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewController+UITextField.swift"; sourceTree = "<group>"; };
 		843EAE2C2694A3C90035078B /* SettingsViewController+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewController+TextField.swift"; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		843EAE402695BA780035078B /* GalleryViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewController+UICollectionView.swift"; sourceTree = "<group>"; };
 		843EAE442695C0160035078B /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		843EAE452695C0160035078B /* ImagesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesCollectionViewCell.xib; sourceTree = "<group>"; };
-		843EAE4C2697373B0035078B /* SettingsViewController+GestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewController+GestureRecognizer.swift"; sourceTree = "<group>"; };
 		8473487D26C260E6001FC79C /* Date+CurrentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CurrentDate.swift"; sourceTree = "<group>"; };
 		8473487F26C2623C001FC79C /* ImageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataManager.swift; sourceTree = "<group>"; };
 		849A2E5E26BFDB850095B9F6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
@@ -137,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				843EAE2C2694A3C90035078B /* SettingsViewController+TextField.swift */,
-				843EAE4C2697373B0035078B /* SettingsViewController+GestureRecognizer.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -212,6 +211,7 @@
 				841CA8F826C29B9700C90C05 /* UICollectionView+ScrollDirection.swift */,
 				849C889E268370250029E74F /* UIViewController+CreateViewController.swift */,
 				849C88A1268374A70029E74F /* UIViewController+Alert.swift */,
+				841CA8FF26C67C1200C90C05 /* UIViewController+ShowOrHidenText.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -459,7 +459,6 @@
 				843EAE3B2694E78A0035078B /* Image.swift in Sources */,
 				849C889D26836EF20029E74F /* AuthorizationViewController.swift in Sources */,
 				841CA8F926C29B9700C90C05 /* UICollectionView+ScrollDirection.swift in Sources */,
-				843EAE4D2697373B0035078B /* SettingsViewController+GestureRecognizer.swift in Sources */,
 				843EAE462695C0160035078B /* ImagesCollectionViewCell.swift in Sources */,
 				849C889F268370250029E74F /* UIViewController+CreateViewController.swift in Sources */,
 				843EAE2D2694A3C90035078B /* SettingsViewController+TextField.swift in Sources */,
@@ -475,6 +474,7 @@
 				849C88A626838E980029E74F /* GalleryViewController.swift in Sources */,
 				849A2E6526BFE3ED0095B9F6 /* String+Localizable.swift in Sources */,
 				849C888926836E2C0029E74F /* AppDelegate.swift in Sources */,
+				841CA90026C67C1200C90C05 /* UIViewController+ShowOrHidenText.swift in Sources */,
 				843EAE2F2694C5720035078B /* GalleryViewController+UITableView.swift in Sources */,
 				849C888B26836E2C0029E74F /* SceneDelegate.swift in Sources */,
 				843EAE412695BA780035078B /* GalleryViewController+UICollectionView.swift in Sources */,

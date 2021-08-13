@@ -14,18 +14,13 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var enterCurrentPasswordTextField: UITextField!
     @IBOutlet weak var enterNewPasswordTextField: UITextField!
     @IBOutlet weak var repeatNewPasswordTextField: UITextField!
-    @IBOutlet weak var showCurrentPasswordButton: UIButton!
-    @IBOutlet weak var showNewPasswordButton: UIButton!
-    @IBOutlet weak var showRepeatPasswordButton: UIButton!
+    @IBOutlet weak var continueButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideKeyboardOnTap()
         enterCurrentPasswordTextField.delegate = self
         enterNewPasswordTextField.delegate = self
         repeatNewPasswordTextField.delegate = self
-        setupChangePasswordButton()
-        setupTextField()
         setupContainerForTextFieldPasswordView()
         localization()
     }
@@ -35,76 +30,64 @@ class SettingsViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
     }
 
-    @IBAction func closedContainerForTextFieldPasswordButtonPressed(_ sender: UIButton) {
-        setupTextField()
-        containerForTextFieldPasswordView.alpha = 0
-        changePasswordButton.isEnabled = true
-    }
-
     @IBAction func changePasswordButtonPressed(_ sender: UIButton) {
-        UIView.animate(withDuration: 1) {
-            sender.isEnabled = false
-            self.containerForTextFieldPasswordView.alpha = 1
-            self.enterCurrentPasswordTextField.becomeFirstResponder()
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            sender.setTitle("cancel".localized, for: .normal)
+            enterCurrentPasswordTextField.becomeFirstResponder()
+            UIView.animate(withDuration: 1) {
+                self.containerForTextFieldPasswordView.alpha = 1
+            }
+        } else {
+            sender.setTitle("changePasswordButton".localized, for: .normal)
+            enterCurrentPasswordTextField.resignFirstResponder()
+            enterNewPasswordTextField.resignFirstResponder()
+            repeatNewPasswordTextField.resignFirstResponder()
+            UIView.animate(withDuration: 1) {
+                self.containerForTextFieldPasswordView.alpha = 0
+            }
         }
     }
 
-    @IBAction func showCurrentPasswordButtonPressed(_ sender: UIButton) {
-        showAndSecureTextEntry(sender, enterCurrentPasswordTextField)
-
+    @IBAction func secureCurrentPasswordButtonPressed(_ sender: UIButton) {
+        showOrHidenText(sender, enterCurrentPasswordTextField)
     }
 
-    @IBAction func showNewPasswordButtonPressed(_ sender: UIButton) {
-        showAndSecureTextEntry(sender, enterNewPasswordTextField)
+    @IBAction func secureNewPasswordButtonPressed(_ sender: UIButton) {
+        showOrHidenText(sender, enterNewPasswordTextField)
     }
 
-    @IBAction func showRepeatNewPasswordButtonPressed(_ sender: UIButton) {
-        showAndSecureTextEntry(sender, repeatNewPasswordTextField)
+    @IBAction func secureRepeatPasswordButtonPressed(_ sender: UIButton) {
+        showOrHidenText(sender, repeatNewPasswordTextField)
+    }
+
+    @IBAction func continueButtonPressed(_ sender: UIButton) {
+        if validateCurrentPassword(),
+           validateNewPassword(),
+           validateRepeatPassword() {
+            guard let password = repeatNewPasswordTextField.text else {
+                return
+            }
+            PasswordManager.shared.save(password)
+            createAlert("changedPassword".localized)
+            changePasswordButton.setTitle("changePasswordButton".localized, for: .normal)
+            changePasswordButton.isSelected = false
+            UIView.animate(withDuration: 1) {
+                self.containerForTextFieldPasswordView.alpha = 0
+            }
+        }
     }
 
     private func setupContainerForTextFieldPasswordView() {
-        containerForTextFieldPasswordView.backgroundColor = .white
+        containerForTextFieldPasswordView.backgroundColor = .clear
         containerForTextFieldPasswordView.alpha = 0
-    }
-
-    private func setupChangePasswordButton() {
-        changePasswordButton.layer.cornerRadius = changePasswordButton.frame.height / 3
     }
 
     private func localization() {
         changePasswordButton.setTitle("changePasswordButton".localized, for: .normal)
+        continueButton.setTitle("continue".localized, for: .normal)
         enterCurrentPasswordTextField.placeholder = "enterPassword".localized
         enterNewPasswordTextField.placeholder = "enterNewPassword".localized
         repeatNewPasswordTextField.placeholder = "repeatPassword".localized
-    }
-
-    private func setupTextField() {
-        enterCurrentPasswordTextField.resignFirstResponder()
-        enterNewPasswordTextField.resignFirstResponder()
-        repeatNewPasswordTextField.resignFirstResponder()
-        enterCurrentPasswordTextField.isSecureTextEntry = true
-        enterNewPasswordTextField.isSecureTextEntry = true
-        repeatNewPasswordTextField.isSecureTextEntry = true
-        enterCurrentPasswordTextField.text?.removeAll()
-        enterNewPasswordTextField.text?.removeAll()
-        repeatNewPasswordTextField.text?.removeAll()
-        enterNewPasswordTextField.isHidden = true
-        repeatNewPasswordTextField.isHidden = true
-        showNewPasswordButton.isHidden = true
-        showRepeatPasswordButton.isHidden = true
-        showCurrentPasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-        showNewPasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-        showRepeatPasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-    }
-
-    private func showAndSecureTextEntry(_ sender: UIButton, _ textField: UITextField) {
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected {
-            sender.setImage(UIImage(systemName: "eye"), for: .normal)
-            textField.isSecureTextEntry = false
-        } else {
-            sender.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-            textField.isSecureTextEntry = true
-        }
     }
 }

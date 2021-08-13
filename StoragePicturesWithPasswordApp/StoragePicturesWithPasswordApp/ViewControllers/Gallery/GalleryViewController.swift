@@ -25,6 +25,16 @@ class GalleryViewController: UIViewController {
     @IBOutlet weak private var exitLabel: UILabel!
     @IBOutlet weak private var countsCommentContainerView: UIView!
     @IBOutlet weak private var containerTableBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak private var noPhotoLabel: UILabel!
+    var isEmptyGallery = true {
+        didSet {
+            if isEmptyGallery {
+                noPhotoLabel.isHidden = false
+            } else {
+                noPhotoLabel.isHidden = true
+            }
+        }
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -160,6 +170,7 @@ class GalleryViewController: UIViewController {
         addLabel.text = "add".localized
         settingsLabel.text = "settings".localized
         exitLabel.text = "exit".localized
+        noPhotoLabel.text = "noPhotos".localized
         cancelCommentButton.setTitle("cancel".localized, for: .normal)
         addCommentTextField.placeholder = "addComment".localized
     }
