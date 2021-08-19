@@ -1,0 +1,15 @@
+
+/* Class = "UITextField"; placeholder = "Add comment"; ObjectID = "5h5-gD-Uxs"; */
+"5h5-gD-Uxs.placeholder" = "Add comment";
+
+/* Class = "UITextField"; placeholder = "Enter new password"; ObjectID = "UlF-FK-FJn"; */
+"UlF-FK-FJn.placeholder" = "Enter new password";
+
+/* Class = "UITextField"; placeholder = "Enter current password"; ObjectID = "ahf-f0-pjy"; */
+"ahf-f0-pjy.placeholder" = "Enter current password";
+
+/* Class = "UIButton"; normalTitle = "Change password"; ObjectID = "fCz-rN-1dW"; */
+"fCz-rN-1dW.normalTitle" = "Change password";
+
+/* Class = "UITextField"; placeholder = "Repeat new password"; ObjectID = "xey-bP-lWb"; */
+"xey-bP-lWb.placeholder" = "Repeat new password";
