@@ -98,12 +98,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		841CA8FC26C2D1BF00C90C05 /* Enum */ = {
+		8404E61C26CE951F0078A820 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				8404E62126CE95860078A820 /* Date */,
+				8404E62026CE95840078A820 /* String */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		8404E61D26CE95220078A820 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				8404E61E26CE95480078A820 /* UIViewController */,
+				8404E61F26CE95640078A820 /* UICollectionView */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		8404E61E26CE95480078A820 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				849C889E268370250029E74F /* UIViewController+CreateViewController.swift */,
+				849C88A1268374A70029E74F /* UIViewController+Alert.swift */,
+				841CA8FF26C67C1200C90C05 /* UIViewController+ShowOrHidenText.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		8404E61F26CE95640078A820 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				841CA8F826C29B9700C90C05 /* UICollectionView+ScrollDirection.swift */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		8404E62026CE95840078A820 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				849A2E6426BFE3ED0095B9F6 /* String+Localizable.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		8404E62126CE95860078A820 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				8473487D26C260E6001FC79C /* Date+CurrentDate.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		8404E62226CE96F80078A820 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				849A2E5126BE892E0095B9F6 /* AppDelegate */,
+				849A2E5226BE89410095B9F6 /* SceneDelegate */,
+				849A2E5B26BFD6060095B9F6 /* Localizable */,
+				849C889626836E2F0029E74F /* Info.plist */,
+				849C889126836E2F0029E74F /* Assets.xcassets */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		841CA8FC26C2D1BF00C90C05 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
 				841CA8FD26C2D1E600C90C05 /* Direction.swift */,
 			);
-			path = Enum;
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		849A2E5126BE892E0095B9F6 /* AppDelegate */ = {
@@ -188,32 +252,24 @@
 		849C888726836E2C0029E74F /* StoragePicturesWithPasswordApp */ = {
 			isa = PBXGroup;
 			children = (
-				849A2E5126BE892E0095B9F6 /* AppDelegate */,
-				849A2E5226BE89410095B9F6 /* SceneDelegate */,
+				8404E62226CE96F80078A820 /* Common */,
 				84B0197E26BE7452006530C6 /* ViewControllers */,
 				84B0198326BE79C9006530C6 /* CustomClass */,
 				84B0198226BE757A006530C6 /* Managers */,
-				849C88A02683747C0029E74F /* Extension */,
-				841CA8FC26C2D1BF00C90C05 /* Enum */,
-				849A2E5B26BFD6060095B9F6 /* Localizable */,
+				849C88A02683747C0029E74F /* Extensions */,
+				841CA8FC26C2D1BF00C90C05 /* Enums */,
 				849A2E5526BE8D6F0095B9F6 /* Storyboards */,
-				849C889126836E2F0029E74F /* Assets.xcassets */,
-				849C889626836E2F0029E74F /* Info.plist */,
 			);
 			path = StoragePicturesWithPasswordApp;
 			sourceTree = "<group>";
 		};
-		849C88A02683747C0029E74F /* Extension */ = {
+		849C88A02683747C0029E74F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8473487D26C260E6001FC79C /* Date+CurrentDate.swift */,
-				849A2E6426BFE3ED0095B9F6 /* String+Localizable.swift */,
-				841CA8F826C29B9700C90C05 /* UICollectionView+ScrollDirection.swift */,
-				849C889E268370250029E74F /* UIViewController+CreateViewController.swift */,
-				849C88A1268374A70029E74F /* UIViewController+Alert.swift */,
-				841CA8FF26C67C1200C90C05 /* UIViewController+ShowOrHidenText.swift */,
+				8404E61D26CE95220078A820 /* UIKit */,
+				8404E61C26CE951F0078A820 /* Foundation */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		84B0197E26BE7452006530C6 /* ViewControllers */ = {
@@ -651,7 +707,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42L4BWH76Z;
-				INFOPLIST_FILE = StoragePicturesWithPasswordApp/Info.plist;
+				INFOPLIST_FILE = StoragePicturesWithPasswordApp/Common/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -671,7 +727,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42L4BWH76Z;
-				INFOPLIST_FILE = StoragePicturesWithPasswordApp/Info.plist;
+				INFOPLIST_FILE = StoragePicturesWithPasswordApp/Common/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
